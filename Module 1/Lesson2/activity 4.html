@@ -1,0 +1,73 @@
+export type PlatformType = 'normal' | 'grass' | 'exit';
+
+export class Platform {
+  position: { x: number; y: number };
+  width: number;
+  height: number;
+  type: PlatformType;
+  color: string;
+  
+  constructor(x: number, y: number, width: number, height: number, type: PlatformType = 'normal') {
+    this.position = { x, y };
+    this.width = width;
+    this.height = height;
+    this.type = type;
+    
+    // Set color based on platform type
+    switch (type) {
+      case 'grass':
+        this.color = '#27ae60';
+        break;
+      case 'exit':
+        this.color = '#f39c12';
+        break;
+      default:
+        this.color = '#7f8c8d';
+        break;
+    }
+  }
+  
+  render(ctx: CanvasRenderingContext2D) {
+    ctx.fillStyle = this.color;
+    ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+    
+    // Add texture details based on type
+    if (this.type === 'grass') {
+      // Add grass tufts
+      ctx.fillStyle = '#2ecc71';
+      for (let i = 0; i < this.width; i += 15) {
+        const grassHeight = 5 + Math.sin(i * 0.5) * 3;
+        ctx.fillRect(this.position.x + i, this.position.y - grassHeight, 5, grassHeight);
+      }
+    } else if (this.type === 'exit') {
+      // Draw exit flag
+      ctx.fillStyle = '#e74c3c';
+      ctx.fillRect(this.position.x + this.width / 2 - 5, this.position.y - 30, 10, 30);
+      
+      ctx.fillStyle = '#f1c40f';
+      ctx.beginPath();
+      ctx.moveTo(this.position.x + this.width / 2 - 5, this.position.y - 30);
+      ctx.lineTo(this.position.x + this.width / 2 - 5 + 25, this.position.y - 30 + 10);
+      ctx.lineTo(this.position.x + this.width / 2 - 5, this.position.y - 30 + 20);
+      ctx.fill();
+    } else {
+      // Add texture to normal platforms
+      ctx.strokeStyle = '#34495e';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      
+      // Top edge
+      for (let i = 0; i < this.width; i += 20) {
+        ctx.rect(this.position.x + i, this.position.y, 10, 5);
+      }
+      
+      // Side details
+      for (let i = 10; i < this.height; i += 15) {
+        ctx.rect(this.position.x, this.position.y + i, 5, 5);
+        ctx.rect(this.position.x + this.width - 5, this.position.y + i, 5, 5);
+      }
+      
+      ctx.stroke();
+    }
+  }
+  

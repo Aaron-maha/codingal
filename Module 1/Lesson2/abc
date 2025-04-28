@@ -1,0 +1,815 @@
+
+<head>
+  <title>MiDas eCLASS</title>
+  <script>
+    var base_url= "https://www.midaseclass.com/";
+    var base_url_api= "https://myschool.midas.com.np/";
+    var subscription='';
+    var subscriptiontype='';
+    var daysremaining='';
+	var childid = '11000727953';
+  </script>
+           <link href="https://www.midaseclass.com/assets/css/template/newstyle.css?t=live0.0.17" rel="stylesheet" type="text/css" />
+
+            <link href="https://www.midaseclass.com/assets/css/template/ecademydesign.css?t=live0.0.17" rel="stylesheet" type="text/css" />
+
+        <link href="https://www.midaseclass.com/assets/css/template/ecademydesign.css?t=live0.0.17" rel="stylesheet" type="text/css" />
+   <style type="text/css">
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      background: rgba(0,0,0,0.3);}
+
+      .overlay img {
+        position: fixed;
+        top: 35%;
+        left: 50%;
+      }
+      .ui-dialog{
+        width:400px !important;
+      }
+	  .carousel-inner .item .video-content{ padding-top:10px !important; }
+    </style>
+
+    <link href="https://www.midaseclass.com/assets/css/template/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="author" content="Designed developed By Srijal">
+
+      <!-- <link rel="icon" type="image/png" href="https://midas.com.np/assets/images/midas.ico"> -->
+      <link rel="shortcut icon" href="https://www.midaseclass.com/assets/eacademy/images/fabicon.jpg" type="image/x-icon"/>
+      <link rel="apple-touch-icon" href="https://www.midaseclass.com/assets/eacademy/images/fabicon.jpg">
+      <link href="https://www.midaseclass.com/assets/css/default/animate.min.css" rel="stylesheet" type="text/css" />
+<link href="https://www.midaseclass.com/assets/css/default/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="https://www.midaseclass.com/assets/css/default/circle.css" rel="stylesheet" type="text/css" />
+<link href="https://www.midaseclass.com/assets/css/default/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="https://www.midaseclass.com/assets/css/default/mobile.css" rel="stylesheet" type="text/css" />
+<link href="https://www.midaseclass.com/assets/css/default/mystyle.css" rel="stylesheet" type="text/css" />
+<link href="https://www.midaseclass.com/assets/css/default/newloginstyle.css" rel="stylesheet" type="text/css" />
+<link href="https://www.midaseclass.com/assets/css/default/responsive.css" rel="stylesheet" type="text/css" />
+<link href="https://www.midaseclass.com/assets/css/default/sm-cust.css" rel="stylesheet" type="text/css" />
+<link href="https://www.midaseclass.com/assets/css/default/style.css" rel="stylesheet" type="text/css" />
+<link href="https://www.midaseclass.com/assets/css/default/tinycarousal.css" rel="stylesheet" type="text/css" />
+  
+              
+              <script src="https://www.google.com/jsapi"></script>
+                            <script type="text/javascript" src="https://www.midaseclass.com/assets/js/default/ajquery-2.1.4.min.js"  ></script><script type="text/javascript" src="https://www.midaseclass.com/assets/js/default/ajquery-ui.min.js"  ></script><script type="text/javascript" src="https://www.midaseclass.com/assets/js/default/ajquery.menu-aim.js"  ></script><script type="text/javascript" src="https://www.midaseclass.com/assets/js/default/ajquery.validate.js"  ></script><script type="text/javascript" src="https://www.midaseclass.com/assets/js/default/bootstrap.min.js"  ></script><script type="text/javascript" src="https://www.midaseclass.com/assets/js/default/common.js"  ></script><script type="text/javascript" src="https://www.midaseclass.com/assets/js/default/main.js"  ></script><script type="text/javascript" src="https://www.midaseclass.com/assets/js/default/modernizr.js"  ></script><script type="text/javascript" src="https://www.midaseclass.com/assets/js/default/swfobject.js"  ></script><script type="text/javascript" src="https://www.midaseclass.com/assets/js/default/zdefault.js"  ></script><script type="text/javascript" src="https://www.midaseclass.com/assets/js/template/common/student_api.js?t=live0.0.17"  ></script><script type="text/javascript" src="https://www.midaseclass.com/assets/js/template/menuhome/menuhome.js?t=live0.0.17"  ></script><script type="text/javascript" src="https://www.midaseclass.com/assets/js/template/dashboard/dashboard.js?t=live0.0.17"  ></script><script type="text/javascript" src="https://www.midaseclass.com/assets/js/template/myclass/myclass.js?t=live0.0.17"  ></script>  
+                        <script>
+                          // var base_url = "https://www.midaseclass.com//";
+                        </script>
+
+                        <!-- <script type="text/javascript" src="https://midas.com.np/assets/js/template/forum/nepali_unicode.js"></script>  -->
+                      </head>                    
+                      <body class="innerbody cust-hidden-xs" style="">
+                      <div class="whitecorner">
+                      <div class="webxview ">
+                      <!-- hidden-xs visible-lg visible-md visible-sm -->
+                       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+<!--- css --->
+<style type="text/css">
+/* font-family: 'Poppins', sans-serif; */
+/* font-family: 'Raleway', sans-serif; */
+.main-header {
+    box-shadow: none !important;
+    background: transparent !important;
+    height: auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-header__content {
+    padding: 30px 110px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sticky-top {
+    position: fixed;
+    width: 100%;
+    z-index: 111;
+    background-color: #fff !important;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,.2));
+}
+
+.sticky-top .main-header__content {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+
+}
+
+header {
+    -o-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+header .main-header__content {
+    -o-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.main-header__logo a {
+    display: inline-block;
+}
+
+.main-header__logo img {
+    max-width: 150px;
+}
+
+.main-header__action {
+    display: flex;
+    align-items: center;
+}
+
+.main-header__action .btn {
+    color: #fff;
+    background-color: #0C4CA1;
+    font: 16px 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1.1;
+    transition: all 0.4s;
+}
+
+.main-header__action .btn:hover {
+    background-color: #063470
+}
+
+.main-header__action .btn span {
+    display: none;
+}
+
+.main-header__action .account {
+    margin-left: 16px;
+    position: relative;
+
+}
+
+.main-header__action .account__active {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.main-header__action .account-image {
+    height: 45px;
+    width: 45px;    
+    position: relative;
+    background-color: #eee;
+    border-radius: 50%;
+    overflow: visible !important;
+}
+.main-header__action .account-image .down-arrow{    
+    content: '';
+    position: absolute;
+    height: 25px !important;
+    width: 25px !important;
+    left: 24%;
+    right: unset !important;
+    background: #fff !important;
+    border-radius: 0 !important;
+    bottom: -32px;
+    transform: rotate(45deg);
+    opacity: 0;
+}
+.main-header__action .account-image .down-arrow.show{
+    opacity: 1;
+}
+
+.main-header__action .account-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 50%;
+}
+
+.main-header__action .account-title {
+    display: none;
+}
+
+.main-header__action .account-toggler {
+    margin-left: 16px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.main-header__action .account-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 16px;
+    background-color: #0C4CA1;
+    color: #fff;
+    min-width: 220px;
+    border-radius: 0 0 12px 12px;
+    padding: 4rem;
+    display: none;
+    z-index: 99
+}
+.main-header__action .account-dropdown::before{
+    display: none !important;
+}
+
+/* .main-header__action .account-dropdown::before {
+    content: "";
+    display: inline-block;
+    margin: 0 auto;
+    position: absolute;
+    right: 24px;
+    top: -4px;
+    height: 16px;
+    width: 16px;
+    background-color: #0C4CA1;
+    border-radius: 4px;
+    transform: rotate(45deg)
+} */
+
+.main-header__action .account-dropdown h2 {
+    font: 500 20px 'Poppins', sans-serif;
+    margin: 0 0 10px;
+}
+
+.main-header__action .account-dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.main-header__action .account-dropdown ul a {
+    color: #fff;
+    display: block;
+    padding: 6px 0;
+
+}
+
+.main-header__action .account-dropdown ul a:hover {
+    color: #EB0D28;
+}
+
+.main-header__action .account-dropdown ul .divider-main {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border-top: 1px solid #EB0D28;
+    opacity: 0.4
+}
+
+.main-header .account-overlay {
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
+    display: none !important;
+}
+
+@media screen and (min-width: 768px) {
+    .main-header__action .account {
+        margin-left: 32px;
+    }
+
+    .main-header__action .account-title {
+        display: block;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        margin-left: 16px;
+    }
+
+    .main-header__action .btn {
+        font-size: 10px;
+    }
+
+    .main-header__action .btn i {
+        display: none;
+    }
+
+    .main-header__action .btn span {
+        display: block;
+    }
+}
+
+.main-header__action .account-dropdown {
+    background: #fff;
+    min-width: 382px;    
+}
+
+/* .main-header__action .account-dropdown::before {
+    height: 25px !important;
+    width: 25px !important;
+    left: 74% !important;
+    right: unset !important;
+    background: #fff !important;
+    border-radius: 0 !important;
+    top: -13px !important;
+} */
+
+.main-header__action .account-dropdown ul li a {
+    color: #444EA1;
+    font-size: 2rem;
+    font-family: "Proxima-Semibold";
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.main-header__action .account-dropdown ul li a svg {
+    margin-right: 8px !important;
+}
+
+.main-header__action .account-dropdown {
+    background: #fff !important;
+}
+
+
+.main-header__action .account-dropdown {
+    background: #fff !important;
+    min-width: 382px !important;    
+}
+
+/* Responsive */
+@media (max-width:575px) {
+    .main-header__content {
+        padding: 12px !important;
+        display: block;
+        overflow: hidden;
+    }
+    .main-header__action{
+        margin-top: 12px;
+    }
+    .main-header__action a img{
+        display: none !important;
+    }
+    .main-header__action a{
+        text-align: center;
+    }
+
+}
+
+.childwise
+{
+    height: 320px;
+    overflow: auto;
+}
+.cogs-ul{
+    margin-top: -100px!important;
+
+}
+</style>
+<!--- css --->
+<script>
+	var eclassid = '40';
+</script>
+
+<script>
+	$(function() {
+		if ($.fn.dialog) {
+			$("#dialog1").dialog();
+			$("#dialog2").dialog();
+			$("#dialog3").dialog();
+		}
+	});
+	$(document).off('click', '.close-dia');
+	$(document).on('click', '.close-dia', function(e) {
+		$(this).parents('.dia-wrap').remove();
+	});
+	$(function() {
+    
+		$(".main-header .account__active").on("click", function() {
+			$(".main-header .account .account-dropdown").fadeToggle('300');
+			$(".main-header .account-overlay").fadeToggle('300');
+		});
+
+		$(document).on("click", '.main-header .account-overlay', function(e) {
+			$(".main-header .account .account-dropdown").fadeOut('300');
+			$(this).hide();
+		});
+	});
+</script>
+
+<header class="main-header main">
+    <div class="main-header__content">
+        <div class="main-header__logo">
+            <a href="https://www.midaseclass.com/home">
+                                <img src="https://www.midaseclass.com/assets/eacademy/images/logo.png" class="img-responsive" />
+            </a>
+        </div>
+        <div class="main-header__action">
+            
+            <a href="https://www.midaseclass.com/home" class="headcolor headcolorselect navhome">
+                <img src="https://www.midaseclass.com/assets/eacademy/new/home.png" class="headimage" /> <b>Home</b>
+            </a>
+							 <a href="https://www.midaseclass.com//aptitude/mylinks" class="headcolor headcolorselect navhome">
+					<img src="https://dailyquiz.midaseclass.com/uploads/midasgfit/exam.png" class="headimage"  style="height:20px;"/> <b>Online Exam</b>
+				 </a>
+						
+                        <a href="javascript:void(0)" class="headcolor headmargin20 navcreation  navpractice">
+
+                <img src="https://www.midaseclass.com/assets/eacademy/images/practice.png" class="headimage " style=" width: 22px;" /> <b>Practice Exam</b>
+            </a>
+                        <!--a href="https://dev.midas.com.np/login/autologin?userid=1001969111&username=aaron98417716881&childid=11000727953&studentid=18204817&bypass=true&purl=https://www.midaseclass.com/myclass"
+                class="headcolor headmargin20 navmyclass">
+                <img src="https://www.midaseclass.com/assets/eacademy/new/myclass.png" class="headimage" /> <b>My Class</b>
+            </a -->
+			
+            <a href="javascript:void(0)" class="headcolor headmargin20 askteacher" style="margin-left:20px">
+
+            <i class="fa fa-video-camera"></i> <b>Ask a Teacher</b>
+            </a>
+            <a href="javascript:void(0)" class="headcolor headmargin20 getsubjectschedule" style="margin-left:20px">
+
+            <img src="https://www.midaseclass.com/assets/eacademy/images/tuitionclass.png" class="headimage" style="height:20px;"/> <b>Tuition Class</b>
+            </a>
+            
+            			            <a href="https://dailyquiz.midaseclass.com?userid=11000727953&origin=https://www.midaseclass.com/home" class="headcolor headcolorselect navhome" style="margin-left:20px">
+                <img src="https://dailyquiz.midaseclass.com/uploads/midasgfit/exam.png" class="headimage"  style="height:20px;"/> <b>Daily Quiz</b>
+            </a>
+			            <div class="account">
+                <div class="account__active">
+                    <div class="account-image">
+                        <div class="down-arrow"></div>
+                                                <img
+                            src="https://www.midaseclass.com/assets/images/student.png" />
+                                            </div>
+                    <div class="account-title childpname"><span class="active-child"></span></div>
+                    <div class="account-toggler"><i class="fa fa-chevron-down"></i></div>
+                </div>				
+				
+                <div class="account-dropdown">
+                    <ul class="childwise">
+                        															<li id="lastChild"> 
+									<a href="javascript:;" class="child-list"
+										data-userid="18204817"> 
+																						Aaron Maharjan										(  EIGHT										 ) </a>
+								</li>
+															<li role="separator" class="divider divider-main"></li>
+                        <!-- </ul> -->
+                        
+                          <!-- <ul class="cogs-ul"> -->
+                        						                            <li>
+                            <a href="https://www.midaseclass.com/packages">
+                            <img src="https://www.midaseclass.com/assets/eacademy/images/buypackage.png"  style="width:20px; height: auto;"/>
+                            &nbsp; Buy MiDas eCLASS Courses
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.midaseclass.com/profile?datatype=voucher">
+                            <img src="https://www.midaseclass.com/assets/eacademy/images/redeemvoucher.png"  style="width:20px; height: auto;"/>
+                            &nbsp; Redeem Voucher
+
+                            </a>
+                        </li>
+                        <li><a href="https://www.midaseclass.com/profile?datatype=classcode">
+                                <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M18.3337 7.99999L10.0003 4.66666L1.66699 7.99999L10.0003 11.3333L18.3337 7.99999ZM18.3337 7.99999V13"
+                                        stroke="#444EA1" stroke-width="1.7" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M5 9.33334V13.8333C5 14.4964 5.52678 15.1323 6.46447 15.6011C7.40215 16.07 8.67392 16.3333 10 16.3333C11.3261 16.3333 12.5979 16.07 13.5355 15.6011C14.4732 15.1323 15 14.4964 15 13.8333V9.33334"
+                                        stroke="#444EA1" stroke-width="1.7" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                Update Class Code</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="https://www.midaseclass.com/profile/view"><svg width="20" height="21" viewBox="0 0 20 21"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.0003 9.66667C11.8413 9.66667 13.3337 8.17428 13.3337 6.33333C13.3337 4.49238 11.8413 3 10.0003 3C8.15938 3 6.66699 4.49238 6.66699 6.33333C6.66699 8.17428 8.15938 9.66667 10.0003 9.66667Z"
+                                        stroke="#444EA1" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M5 18V16.3333C5 15.4493 5.35119 14.6014 5.97631 13.9763C6.60143 13.3512 7.44928 13 8.33333 13H11.6667C12.5507 13 13.3986 13.3512 14.0237 13.9763C14.6488 14.6014 15 15.4493 15 16.3333V18"
+                                        stroke="#444EA1" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                Profile</a></li>
+                        <li role="separator" class="divider"></li>
+
+                                                <li>
+                            <a href="https://dailyquiz.midaseclass.com/clear_data/eclass_gift/studentdetails?userid=11000727953&origin=https://www.midaseclass.com/home"><img src="https://dailyquiz.midaseclass.com/uploads/midasgfit/header/icon-coins.png" style="width:20px; height: auto;"> &nbsp My Coins
+
+                            </a>
+                        </li>
+
+						                      
+                                                													<li>
+								<a href="https://www.midaseclass.com/login/logout"><svg width="20" height="21"
+                                    viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.33333 13.8333L8.33333 15.5C8.33333 15.942 8.50893 16.366 8.82149 16.6785C9.13405 16.9911 9.55797 17.1667 10 17.1667L15.8333 17.1667C16.2754 17.1667 16.6993 16.9911 17.0118 16.6785C17.3244 16.366 17.5 15.942 17.5 15.5L17.5 5.50001C17.5 5.05798 17.3244 4.63406 17.0118 4.3215C16.6993 4.00894 16.2754 3.83334 15.8333 3.83334L10 3.83334C9.55797 3.83334 9.13405 4.00894 8.82149 4.3215C8.50893 4.63406 8.33333 5.05798 8.33333 5.50001L8.33333 7.16667"
+                                        stroke="#444EA1" stroke-width="1.7" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M14.167 10.5L2.50032 10.5M2.50032 10.5L5.00033 13M2.50032 10.5L5.00032 8"
+                                        stroke="#444EA1" stroke-width="1.7" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                Log Out</a>
+							</li>
+						                    </ul>
+                </div>
+            </div>
+            <div class="account-overlay"></div>
+        </div>
+    </div>
+</header>
+
+
+<script type="text/javascript">
+	var updatestorage = localStorage.getItem('updatestorage');
+	localStorage.setItem('ipaddress', '127.0.0.1');
+	$(function() {
+		var header = $("header");
+		var navbarHeight = header.outerHeight();
+		$(window).scroll(function(){
+            var st = $(this).scrollTop();
+            if(st > navbarHeight){
+                header.addClass("sticky-top");
+            }
+            else{
+                header.removeClass("sticky-top");
+            }
+        });    
+	});
+    $(document).on('click','.account__active',function(){
+        $('.account-image .down-arrow').toggleClass('show');
+    });    
+</script>
+		                       <div class="container pad-fix">  
+                      <div class="searchview">
+                                            </div>
+                     <div class="mainform styleclassmenuhome">
+                      <link href="https://www.midaseclass.com/assets/css/template/menuhome.css" rel="stylesheet" />
+
+<input type="hidden" id="source" value="menuhome">
+
+<main class="main-body subContent mainContent" id="dashboard_wrapper">
+    <div class="container  sec-block myclasssec-block">
+        <div class="main-body__header" id="">
+            <div class="main-body__title">
+                <h5 class="sub-title">Grade</h5>
+                <h2 class="title">EIGHT</h2>
+                <svg width="290" height="23" viewBox="0 0 290 23" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect width="290" height="23" fill="url(#pattern0)" />
+                    <defs>
+                        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_945_252" transform="scale(0.00344828 0.0434783)" />
+                        </pattern>
+                        <image id="image0_945_252" width="290" height="23"
+                            xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAAAXCAYAAACvfkIcAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDYuMC1jMDA2IDc5LmRhYmFjYmIsIDIwMjEvMDQvMTQtMDA6Mzk6NDQgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCAyMi40IChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjI3OEQzNDcwNjQ5MDExRUM5NzI3QzZCRjUzQjkxNEFFIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjI3OEQzNDcxNjQ5MDExRUM5NzI3QzZCRjUzQjkxNEFFIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NzQ4MURDODk2NDdEMTFFQzk3MjdDNkJGNTNCOTE0QUUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NzQ4MURDOEE2NDdEMTFFQzk3MjdDNkJGNTNCOTE0QUUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6Wy4XzAAAKhklEQVR42uyc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" />
+                    </defs>
+                </svg>
+            </div>
+           
+            <img style="display: none;" class="loader1" width="80px"
+                src="https://www.midaseclass.com//assets/images/loader4.gif" />
+
+        </div>
+    </div>
+
+    <div class="col-md-12  myclassmaincontent">
+
+
+<div class="container liveSubject">
+    <div class="row position-relative">
+        <div class="col-lg-8" style="padding-right:40px">
+            <div class="row">
+            
+                              <div class="col-xs-12 col-sm-6 col-md-4 ml-30 ml-30">
+                    <a formdest="\.mainform" class="card menucard" 
+                        data-menu="learninghub" data-id="0" >
+                        <span >
+                            <img src="https://myschool.midas.com.np/uploads/homepagemenu/Learning_Hub_1.png" alt="Learning Hub" />
+                        </span>
+                    </a>
+                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 ml-30 ml-30">
+                    <a formdest="\.mainform" class="card menucard" 
+                        data-menu="selfassessment" data-id="0" >
+                        <span >
+                            <img src="https://myschool.midas.com.np/uploads/homepagemenu/Self_Assessment_11.png" alt="Self Assessment" />
+                        </span>
+                    </a>
+                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 ml-30 ml-30">
+                    <a formdest="\.mainform" class="card menucard" 
+                        data-menu="nsc" data-id="0" >
+                        <span >
+                            <img src="https://myschool.midas.com.np/uploads/homepagemenu/NSC-Icon.png" alt="NSC" />
+                        </span>
+                    </a>
+                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 ml-30 ml-30">
+                    <a formdest="\.mainform" class="card menucard" 
+                        data-menu="creations" data-id="0" >
+                        <span >
+                            <img src="https://myschool.midas.com.np/uploads/homepagemenu/Creations1.png" alt="Creations" />
+                        </span>
+                    </a>
+                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 ml-30 ml-30">
+                    <a formdest="\.mainform" class="card menucard" 
+                        data-menu="dailyquiz" data-id="0" >
+                        <span >
+                            <img src="https://myschool.midas.com.np/uploads/homepagemenu/DailyQuiz3.png" alt="Daily Quiz" />
+                        </span>
+                    </a>
+                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 ml-30 ml-30">
+                    <a formdest="\.mainform" class="card menucard" 
+                        data-menu="factbox" data-id="629" >
+                        <span >
+                            <img src="https://myschool.midas.com.np/uploads/homepagemenu/Fact_Box_11.png" alt="Fact Box" />
+                        </span>
+                    </a>
+                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 ml-30 ml-30">
+                    <a formdest="\.mainform" class="card menucard" 
+                        data-menu="dailyquizzes" data-id="0" >
+                        <span >
+                            <img src="https://myschool.midas.com.np/uploads/homepagemenu/Midas_camp171.png" alt="Daily Quizzes" />
+                        </span>
+                    </a>
+                </div>
+                
+
+
+            </div>
+        </div>
+        <div class="col-lg-4 img-div">
+            <img src="/uploads/dashboard-banner.png" alt="my abc" style="    height: 363px;
+    padding: unset!important;
+    margin: unset;
+">
+        </div>
+
+    </div>
+</div>
+    </div>
+
+</main>
+<style>
+.img-div img{ margin-left:0px !important; }
+.carousel-inner .item .video-content{ padding-top:0px !important; }
+</style>                      
+                    </div>
+                    <div class="clear"></div>
+                    <div  id='aj_img' class="hidden" style="display:none" >
+                     <img src="https://www.midaseclass.com/assets/images/ajax-loader.gif" alt="" />  Looking Up
+                   </div>
+                   <a href="https://www.midaseclass.com/" class='base_path hidden'>https://www.midaseclass.com/</a>                   <div class="coverdiv overlay" style="display:none">
+                     <img src="https://www.midaseclass.com/assets/images/loaders.gif">
+                   </div>
+                   <div class="error" style="display:none !important">
+                     <style>.container.err-block{min-height: 250 px !important;padding: 10px 25px 0px 5px !important;}.bg-white.jumbotron{background:#fff !important;}
+.alert.alert-danger{box-shadow: 5px 5px #fafafa;}
+</style>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="contentadditionmain">
+<!-- <div class="container err-block "> -->
+<div class="col-lg-12 bg-white jumbotron">
+<h3 class="alert alert-danger">Oops! An Error has occured.</h3>
+<h5>Please Reload...</h5>
+</div>
+<!-- </div> -->
+</div>                   </div>
+                   
+                 </div>
+               </div>
+                                  </div>
+
+                 	   <!-- SUBSCRIPTION DIALOG -->
+                       <div id="subscription-dialog"></div>
+                       <div class="footer">
+			<!-- img src="http://myschool.midas.com.np/images/login_logo.png" alt="" -->
+			<p> <span style="    color: #5f4242;font-weight: bold;">Technical Support (7AM to 9 PM)</span><br>
+				<span style="    color: #5f4247;font-weight: bold;">Phone: </span>9847395987,&nbsp;&nbsp;9823315756&nbsp;&nbsp;
+				Whatsapp : 9745616966&nbsp;&nbsp;&nbsp;
+				Email Address : info@midas.com.np<!-- br>
+				Video Call : <a href="javascript:void(0)" class="instantcall">Talk To Us Now</a>&nbsp;&nbsp;
+				<!-- span style="    color: #5f4247;font-weight: bold;">Text/Voice Chat: <a href="javascript:void(0)">Chat With Us Now</a></span -->
+				<br>
+
+			</p>
+			<p>Powered By <a href="">Midas Education Pvt. Ltd.</a></p>
+</div>
+
+
+       <div class="modal fade" id="teachermodal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" style="max-height: fit-content;
+   max-width:650px!important;min-height:250px!important">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content1">
+            <div class="modal-header">
+                <h5 class="modal-title" id="teachermodaltitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                    style="margin-top:-25px!important">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body teachermodalbody">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<script src="https://myclass.midaseclass.com/extra/theme/bower_components/jquery/dist/jquery.min.js"></script>	
+<script>
+	$(function(){
+		$(".main-header .account__active").off("click");
+		$(".main-header .account__active").on("click", function(){
+			/*if(!$(".main-header .account .account-dropdown").is(':visible'))
+			{
+				$(".main-header .account .account-dropdown").show();
+				$(".main-header .account-overlay").show();
+			}
+			else{
+				$(".main-header .account .account-dropdown").hide();
+				$(".main-header .account-overlay").hide();
+			}*/
+			$(".main-header .account .account-dropdown").fadeToggle('300');
+			$(".main-header .account-overlay").fadeToggle('300');
+		});
+		
+	   $(document).off("click", '.main-header .account-overlay');	
+	   $(document).on("click", '.main-header .account-overlay', function(e){
+			$(".main-header .account .account-dropdown").fadeOut('300');
+			$(this).hide();
+		})
+
+		//$('[data-toggle="tooltip"]').tooltip();
+	})
+</script>
+                           <script>
+              localStorage.setItem('userid','1001969111')
+			  localStorage.setItem('childid','11000727953')
+           
+              localStorage.setItem('currentchapterid','');
+              localStorage.setItem('currentsubjectid','');
+              localStorage.setItem('currentevent','class');
+              let teachersts='';
+			  if(teachersts =='Y')
+			  {
+				localStorage.setItem('eclassid','');
+				localStorage.setItem('classid','');
+				localStorage.setItem('currentclassid','');
+				localStorage.setItem('classname','EIGHT');
+				localStorage.setItem('currentsubjectid','');
+				localStorage.setItem('currentchapterid','');
+				localStorage.setItem('currentsubjectname','');
+				localStorage.setItem('currentchaptername','');
+				localStorage.setItem('orgid','');
+				localStorage.setItem('apiKey','0cfbd2e2053e0d7eee49e642552cc94e');
+				localStorage.setItem('userid','1001897910');
+				localStorage.setItem('childid','11000699997');
+				localStorage.setItem('teacherid','');
+				localStorage.setItem('ipaddress','');
+				localStorage.setItem('teacher','Y');
+				localStorage.setItem('currentevent', 'class');
+				localStorage.setItem('fm','');
+				localStorage.setItem('fs','');
+				localStorage.setItem('sectionid', 2251360);
+
+				var subscription='';
+				var subscriptiontype='';
+				var daysremaining=''; 
+				//$('#cname').html('ONE');
+			  }else{
+					/*$(function(){
+						if($.trim($('.active-child').html())==''){
+							localStorage.setItem('mobileno',aaron98417716881);
+							$('.child-list[data-userid=18208854]')[0].click();
+						}
+					});*/
+					localStorage.setItem('sectionid', 2251360);
+			  }
+			  
+		</script>
+             
+             <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>  
+
+              		 </body>
+               </html>
