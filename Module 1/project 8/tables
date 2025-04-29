@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>replit</title>
+    </head>
+    <body>
+        <table border="5" bgcolor="green">
+            <tr>
+                <th bgcolor="yellow" border="10">oner</th>
+                <th> dog's</th>
+<th>cat's </th>
+            </tr>
+            <tr>
+                <td> Aaron</td>
+                <td>kala</td>
+                <td>lusy </td>
+            </tr>
+            <tr>
+                <td>Bishnu</td>
+                <td>kala </td>
+                <td>  lusy</td>
+            </tr>
+            <tr>
+               <td> Aarya</td>
+               <td> kala</td>
+               <td>lusy </td>
+            </tr>
+        </table>
+    </body>
+</html>
