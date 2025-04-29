@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Dog</title>
+</head>
+<body>
+
+    <h1>Meet My Dog!</h1>
+
+    <p>This is a page all about my amazing dog.</p>
+
+    <h2>About My Dog</h2>
+    <ul>
+        <li>Name: kala</li>
+        <li>Breed: Tibetean</li>
+        <li>Age: 12 years</li>
+        <li>Favorite Toy: Ball</li>
+    </ul>
+
+    <h2>My Dog's Photo</h2>
+    <img src="kala.jpg" alt="A picture of my dog" height="500" >
+
+
+    <h2>Feeding Schedule</h2>
+    <table border="1">
+        <tr>
+            <th>Time</th>
+            <th>Meal</th>
+        </tr>
+        <tr>
+            <td>8:00 AM</td>
+            <td>Dry Food + Water</td>
+        </tr>
+        <tr>
+            <td>6:00 PM</td>
+            <td>Chicken + Rice</td>
+        </tr>
+    </table>
+
+    <h2>Watch Him Play!</h2>
+    <video width="320" height="240" controls>
+        <source src="dog-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <p>Want to learn more? <a href="https://en.wikipedia.org/wiki/Dog" target="_blank">Click here</a> to read about dogs.</p>
+
+</body>
+</html>
