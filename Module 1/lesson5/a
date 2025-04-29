@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Body Tag Example</title>
+</head>
+<body>
+
+    <h1>Welcome to My Web Page</h1>
+
+    <p>This is a paragraph inside the body tag.</p>
+
+    <h2>List Example</h2>
+    <ul>
+        <li>Item One</li>
+        <li>Item Two</li>
+        <li>Item Three</li>
+    </ul>
+
+    <h2>Image Example</h2>
+    <img src="Aaron.jpg" alt="brother" height="100" > 
+    <img src="Aarya.jpg" alt="sister" height="100" > 
+
+    <h2>Table Example</h2>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Aaron</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>Aarya</td>
+            <td>6.5</td>
+        </tr>
+    </table>
+
+    <h2>Link Example</h2>
+    <a href="https://www.example.com" target="_blank">Visit Example.com</a>
+
+    <h2>Video Example</h2>
+    <video width="320" height="240" controls>
+        <source src="sample-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+</body>
+</html>
