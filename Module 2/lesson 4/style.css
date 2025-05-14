@@ -1,0 +1,51 @@
+body{
+    font-family: 'arial' ,sans-serif;
+    background-color: #0d1117;
+    color:#c9d1d9;
+}
+h1{
+    color: #58a6ff;
+}
+/*attribute selector*/
+a{
+    color:#8b948e;
+    text-decoration: none;
+}
+a:hover{
+    color:#1f6feb
+}
+/*cild  selector*/
+ul>li{
+    font-weight: bold;
+}
+/*sibling  selector*/
+h1+p{
+    background-color:#161b22;
+    padding: 10px;
+    border-radius: 5px;
+}
+/*:hover peseudo-class*/
+ul li:hover{
+    color:#4f8cc9;
+}
+/* :nith-child(n) pseudo-class*/
+ul li:nth-child(3){
+    background-color: #21262d;
+}
+/* :not (selector) pseudo-class*/
+p:not(:first-of-type){text-decoration: underline;
+    text-decoration: underline;
+}
+/* ::before peseudo-class*/
+ul li::before{
+    content:"🚀" ;
+}
+/*after peseudo-class*/
+a::after{
+     content:"👔" ;
+}
+/* ::first-letter peseudo-class*/
+p::first-letter{ 
+    font-size: 200%;
+    color: #58a6ff;
+}
