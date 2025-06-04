@@ -6,7 +6,7 @@
     <body>
         <table border="5" bgcolor="green">
             <tr>
-                <th bgcolor="yellow" border="10">oner</th>
+                <th bgcolor="yellow" border="10">owner</th>
                 <th> dog's</th>
 <th>cat's </th>
             </tr>
