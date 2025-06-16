@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>K Vako Hola-Yabesh Thapa</title>
+</head>
+<body style="text-align: center; font-family: Arial, sans-serif;">
+  <h1>K Vako Hola-Yabesh Thapa</h1>
+  <!-- YouTube Embedded Video -->
+ <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/A99lqfZay5g"
+    title="K Vako Hola - Yabesh Thapa"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</body>
+</html>

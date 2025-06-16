@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>3D Car Game - Environment & Terrain</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      user-select: none;
+    }
+    #speedometer {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: hsla(0, 10%, 6%, 0.6);
+      color:red(255, 255, 255);
+      padding: 10px 20px;
+      font-size: 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      z-index: 100;
+      pointer-events: none;
+      width: 150px;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</head>
+<body>
+<div id="speedometer">Speed: 0 km/h</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/loaders/GLTFLoader.min.js"></script>
+
+<script>
+let scene, camera, renderer;
+let car, carBoundingBox;
+let velocity = 0;
+let angle = 0;
+let keys = {};
+let crashFlash = 0;
+
+const maxSpeed = 1.5;
+const accelRate = 0.02;
+const brakeRate = 0.04;
+const friction = 0.015;
+const steerSpeed = 0.04;
+
+const speedometer = document.getElementById("speedometer");
+
+init();
+animate();
+
+function init() {
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x87ceeb);
+
+  camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+  camera.position.set(0, 5, 10);
+
+  renderer = new THREE.WebGLRenderer({antialias: true});
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild(renderer.domElement);
+
+  // Lights
+  const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+  dirLight.position.set(10, 20, 10);
+  scene.add(dirLight);
+  scene.add(new THREE.AmbientLight(0xffffff, 0.3));
+
+  // Ground with slight height variation (hills)
+  const groundGeo = new THREE.PlaneGeometry(200, 200, 50, 50);
+  const pos = groundGeo.attributes.position;
+  for(let i=0; i < pos.count; i++) {
+    const x = pos.getX(i);
+    const z = pos.getY(i); // Actually, we want Z coordinate here, but PlaneGeometry has (x,y,z), y is vertical. So use getZ(i)
+    const y = Math.sin(x * 0.1) * 0.7 + Math.sin(pos.getZ(i) * 0.1) * 0.7;
+    pos.setZ(i, y);
+  }
+  groundGeo.computeVertexNormals();
+  const groundMat = new THREE.MeshStandardMaterial({color: 0x228822});
+  const ground = new THREE.Mesh(groundGeo, groundMat);
+  ground.rotation.x = -Math.PI/2;
+  scene.add(ground);
+
+  // Road - gray rectangle
+  const roadGeo = new THREE.PlaneGeometry(12, 200);
+  const roadMat = new THREE.MeshStandardMaterial({color: 0x444444});
+  const road = new THREE.Mesh(roadGeo, roadMat);
+  road.rotation.x = -Math.PI/2;
+  road.position.y = 0.01; // slight above ground to avoid z-fighting
+  scene.add(road);
+
+  // Road stripes (dashes)
+  const stripeGeo = new THREE.PlaneGeometry(1, 6);
+  const stripeMat = new THREE.MeshStandardMaterial({color: 0xffffff});
+  for(let i = -90; i <= 90; i += 15) {
+    const stripe = new THREE.Mesh(stripeGeo, stripeMat);
+    stripe.position.set(0, 0.02, i);
+    stripe.rotation.x = -Math.PI/2;
+    scene.add(stripe);
+  }
+
+  // Trees along road (cylinders + cones)
+  function addTree(x,z) {
+    const trunkGeo = new THREE.CylinderGeometry(0.15, 0.15, 1, 8);
+    const trunkMat = new THREE.MeshStandardMaterial({color: 0x8B4513});
+    const trunk = new THREE.Mesh(trunkGeo, trunkMat);
+    trunk.position.set(x, 0.5, z);
+
+    const leavesGeo = new THREE.ConeGeometry(0.6, 1.5, 8);
+    const leavesMat = new THREE.MeshStandardMaterial({color: 0x0b6623});
+    const leaves = new THREE.Mesh(leavesGeo, leavesMat);
+    leaves.position.set(x, 1.7, z);
+
+    scene.add(trunk);
+    scene.add(leaves);
+  }
+
+  for(let z = -90; z <= 90; z += 15) {
+    addTree(7, z + (Math.random() * 4 - 2));
+    addTree(-7, z + (Math.random() * 4 - 2));
+  }
+
+  // Simple street lights (poles + lamps)
+  function addStreetLight(x,z) {
+    const poleGeo = new THREE.CylinderGeometry(0.05, 0.05, 3);
+    const poleMat = new THREE.MeshStandardMaterial({color: 0x222222});
+    const pole = new THREE.Mesh(poleGeo, poleMat);
+    pole.position.set(x, 1.5, z);
+
+    const lampGeo = new THREE.SphereGeometry(0.2, 8, 8);
+    const lampMat = new THREE.MeshStandardMaterial({color: 0xffffaa, emissive: 0xffffaa, emissiveIntensity: 0.8});
+    const lamp = new THREE.Mesh(lampGeo, lampMat);
+    lamp.position.set(x, 3, z);
+
+    scene.add(pole);
+    scene.add(lamp);
+  }
+
+  for(let z = -80; z <= 80; z += 40) {
+    addStreetLight(5, z);
+    addStreetLight(-5, z);
+  }
+
+  // Ramp and wall from before
+  const rampGeo = new THREE.BoxGeometry(10, 2, 6);
+  const rampMat = new THREE.MeshStandardMaterial({color: 0x654321});
+  const ramp = new THREE.Mesh(rampGeo, rampMat);
+  ramp.position.set(15, 1, -10);
+  ramp.rotation.x = -Math.PI/12;
+  scene.add(ramp);
+
+  const wallGeo = new THREE.BoxGeometry(5, 3, 1);
+  const wallMat = new THREE.MeshStandardMaterial({color: 0x555555});
+  const wall = new THREE.Mesh(wallGeo, wallMat);
+  wall.position.set(0, 1.5, -40);
+  scene.add(wall);
+
+  // Car model
+  const loader = new THREE.GLTFLoader();
+  loader.load(
+    "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/CesiumMilkTruck/glTF/CesiumMilkTruck.gltf",
+    function(gltf) {
+      car = gltf.scene;
+      car.scale.set(0.01, 0.01, 0.01);
+      car.position.set(0, 0, 0);
+      scene.add(car);
+      carBoundingBox = new THREE.Box3().setFromObject(car);
+    },
+    undefined,
+    function(err) {
+      console.warn("GLTF load failed, using fallback car box");
+      // fallback simple car
+      const carGeo = new THREE.BoxGeometry(2,1,4);
+      const carMat = new THREE.MeshStandardMaterial({color:0x0000ff});
+      car = new THREE.Mesh(carGeo, carMat);
+      car.position.set(0, 0.5, 0);
+      scene.add(car);
+      carBoundingBox = new THREE.Box3().setFromObject(car);
+    }
+  );
+
+  // Keys
+  document.addEventListener("keydown", e => keys[e.key.toLowerCase()] = true);
+  document.addEventListener("keyup", e => keys[e.key.toLowerCase()] = false);
+
+  window.addEventListener("resize", () => {
+    camera.aspect = window.innerWidth/window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+}
+
+function animate() {
+  requestAnimationFrame(animate);
+
+  if (!car) {
+    renderer.render(scene, camera);
+    return;
+  }
+
+  // Acceleration/braking
+  if (keys["w"]) {
+    velocity += accelRate * (1 - velocity/maxSpeed);
+  } else if (keys["s"]) {
+    velocity -= brakeRate;
+  } else {
+    if (velocity > 0) velocity -= friction;
+    else if (velocity < 0) velocity += friction;
+  }
+  if (velocity > maxSpeed) velocity = maxSpeed;
+  if (velocity < -maxSpeed/2) velocity = -maxSpeed/2;
+  if (Math.abs(velocity) < 0.001) velocity = 0;
+
+  // Steering with speed factor
+  if (keys["a"]) {
+    angle += steerSpeed * (velocity / maxSpeed);
+  }
+  if (keys["d"]) {
+    angle -= steerSpeed * (velocity / maxSpeed);
+  }
+
+  // Move car
+  car.position.x -= Math.sin(angle) * velocity;
+  car.position.z -= Math.cos(angle) * velocity;
+
+  // Tilt & bob effects (suspension)
+  let targetTilt = 0;
+  if (keys["a"]) targetTilt = 0.15;
+  else if (keys["d"]) targetTilt = -0.15;
+  car.rotation.z += (targetTilt - car.rotation.z) * 0.1;
+
+  let targetBob = 0;
+  if (keys["w"]) targetBob = Math.sin(Date.now() * 0.01) * 0.05;
+  else if (keys["s"]) targetBob = Math.sin(Date.now() * 0.01) * -0.05;
+  car.position.y += (targetBob - car.position.y) * 0.2;
+
+  car.rotation.y = angle;
+
+  // Collision detection with wall
+  const wallBox = new THREE.Box3(new THREE.Vector3(-2.5, 0, -40.5), new THREE.Vector3(2.5, 3, -39.5));
+  carBoundingBox.setFromObject(car);
+  if (carBoundingBox.intersectsBox(wallBox)) {
+    crashFlash = 20;
+    velocity = -velocity * 0.3;
+  }
+
+  // Crash flash effect
+  if (crashFlash > 0) {
+    crashFlash--;
+    car.traverse((obj) => {
+      if (obj.isMesh) obj.material.color.set(0xff0000);
+    });
+  } else {
+    car.traverse((obj) => {
+      if (obj.isMesh) obj.material.color.set(0x0000ff);
+    });
+  }
+
+  // Camera follows behind car
+  const camX = car.position.x + Math.sin(angle) * 10;
+  const camZ = car.position.z + Math.cos(angle) * 10;
+  camera.position.lerp(new THREE.Vector3(camX, 5, camZ), 0.1);
+  camera.lookAt(car.position.x, car.position.y, car.position.z);
+
+  speedometer.textContent = "Speed: " + Math.abs(Math.round(velocity * 100 * 3.6)) + " km/h";
+
+  renderer.render(scene, camera);
+}
+</script>
+</body>
+</html>
