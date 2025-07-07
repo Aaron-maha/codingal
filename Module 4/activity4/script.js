@@ -1,4 +1,5 @@
 function validateform(e){
+    alert("Form submitted successfully");
     e.preventDefault();
     const email=document.getElementById("email").value;
     const pass=document.getElementById("password").value;
